@@ -1,34 +1,40 @@
 'use client';
 
 import { BiSearch } from 'react-icons/bi';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usePokemon } from '../../hooks/usePokemon';
+import { Pokemon } from '../../types/pokemon';
+import { useRouter } from 'next/navigation';
 
 type Props = {};
 
 const PokemonAutocomplete = (props: Props) => {
   const [search, setSearch] = useState('');
-  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [suggestions, setSuggestions] = useState<Pokemon[]>([]);
 
-  const pokemonList = [
-    'Bulbasaur',
-    'Charmander',
-    'Squirtle',
-    'Pikachu',
-    'Charizard',
-    'Mewtwo',
-    'Mew',
-    'Gyarados',
-  ];
+  const { fetchPokemonList, isLoading, error } = usePokemon();
 
-  const handleSearch = (value: string) => {
-    setSearch(value);
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchSuggestions = async () => {
+      if (search.length > 0) {
+        const response = await fetchPokemonList(search);
+        if (response) {
+          setSuggestions(response);
+        }
+      } else {
+        setSuggestions([]);
+      }
+    };
+    fetchSuggestions();
+  }, [search]);
+
+  const handleSearch = async (value: string) => {
     if (value.length > 0) {
-      const filteredSuggestions = pokemonList.filter(pokemon =>
-        pokemon.toLowerCase().includes(value.toLowerCase())
-      );
-      setSuggestions(filteredSuggestions);
+      setSearch(value);
     } else {
-      setSuggestions([]);
+      setSearch('');
     }
   };
 
@@ -58,11 +64,12 @@ const PokemonAutocomplete = (props: Props) => {
               className="px-4 py-2 hover:bg-red-100 cursor-pointer
                 transition-colors duration-150"
               onClick={() => {
-                setSearch(pokemon);
+                setSearch(pokemon.name);
                 setSuggestions([]);
+                router.push(`/pokemon/${pokemon.id}`);
               }}
             >
-              {pokemon}
+              {pokemon.name}
             </li>
           ))}
         </ul>

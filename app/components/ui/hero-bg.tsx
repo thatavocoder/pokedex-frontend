@@ -39,13 +39,14 @@ const HeroBg = (props: Props) => {
           alt="pokeball"
           width={700}
           height={700}
-          className="absolute opacity-10 h-auto overflow-hidden z-0"
+          className="absolute opacity-10 h-auto overflow-hidden z-0 select-none"
           style={{
             left: `${left}%`,
             top: `${top}%`,
             width: `${width}px`,
           }}
           unoptimized
+          draggable={false}
         />
       ))}
     </div>
