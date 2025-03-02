@@ -43,7 +43,7 @@ const PokemonSearch = () => {
       <h1 className="text-4xl font-bold mt-8 mb-6 text-gray-800">Search Results</h1>
       <div className="w-full max-w-4xl px-4">
         {suggestions.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {suggestions.map((suggestion, index) => (
               <div
                 key={suggestion.id}

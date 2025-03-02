@@ -52,6 +52,10 @@ const PokemonAutocomplete = () => {
       <BiSearch className="absolute left-8 w-5 h-5 text-gray-500 z-30" />
       <button
         onClick={() => {
+          if (search.length < 3) {
+            alert('Please enter at least 3 characters');
+            return;
+          }
           if (search) {
             router.push(`/search/${search.toLowerCase()}`);
           }
