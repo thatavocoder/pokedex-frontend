@@ -56,7 +56,7 @@ const PokemonDetails = () => {
               </span>
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl font-bold">{pokemon?.height}</span>
-                <span className="text-lg opacity-70">meters</span>
+                <span className="text-lg opacity-70">ft</span>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ const PokemonDetails = () => {
               </span>
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl font-bold">{pokemon?.weight}</span>
-                <span className="text-lg opacity-70">kilos</span>
+                <span className="text-lg opacity-70">kg</span>
               </div>
             </div>
 
