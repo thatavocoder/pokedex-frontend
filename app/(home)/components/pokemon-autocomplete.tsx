@@ -43,13 +43,25 @@ const PokemonAutocomplete = () => {
         value={search}
         onChange={e => handleSearch(e.target.value)}
         placeholder="What do you want to catch?"
-        className="w-full p-4 pl-16 rounded-full bg-white z-20 
+        className="w-full p-4 pl-16 pr-20 rounded-full bg-white z-20 
           border-4 border-black shadow-lg
           placeholder:text-gray-500 text-lg
           focus:outline-none focus:ring-4 focus:ring-red-500
           transition-all duration-300"
       />
       <BiSearch className="absolute left-8 w-5 h-5 text-gray-500 z-30" />
+      <button
+        onClick={() => {
+          if (search) {
+            router.push(`/search/${search.toLowerCase()}`);
+          }
+        }}
+        className="absolute right-4 bg-red-500 text-white px-4 py-2 rounded-full 
+          hover:bg-red-600 transition-colors duration-200 z-30
+          focus:outline-none focus:ring-2 focus:ring-red-700"
+      >
+        Go
+      </button>
 
       {suggestions.length > 0 && (
         <ul
