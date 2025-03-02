@@ -21,7 +21,7 @@ export default function Home() {
         alt="logo"
         width={350}
         height={350}
-        className="mt-8 h-42 w-auto z-10"
+        className="mt-8 h-32 sm:h-42 w-auto z-10 max-w-[90%]"
         unoptimized
       />
       <PokemonAutocomplete />

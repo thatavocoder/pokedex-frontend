@@ -37,7 +37,7 @@ const PokemonAutocomplete = () => {
   };
 
   return (
-    <div className="mt-16 w-1/2 relative flex items-center">
+    <div className="mt-16 w-11/12 lg:w-1/2 relative flex items-center">
       <input
         type="text"
         value={search}

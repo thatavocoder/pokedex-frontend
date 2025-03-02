@@ -10,27 +10,27 @@ const HeroBg = (props: Props) => {
         {
           left: -10,
           top: 0,
-          width: 500,
+          width: 'clamp(200px, 50vw, 500px)',
         },
         {
           left: 40,
           top: 5,
-          width: 600,
+          width: 'clamp(300px, 60vw, 600px)',
         },
         {
           left: 20,
           top: 60,
-          width: 350,
+          width: 'clamp(150px, 35vw, 350px)',
         },
         {
           left: 75,
           top: 75,
-          width: 400,
+          width: 'clamp(200px, 40vw, 400px)',
         },
         {
           left: 90,
           top: -10,
-          width: 300,
+          width: 'clamp(150px, 30vw, 300px)',
         },
       ].map(({ left, top, width }, i) => (
         <Image
@@ -43,7 +43,7 @@ const HeroBg = (props: Props) => {
           style={{
             left: `${left}%`,
             top: `${top}%`,
-            width: `${width}px`,
+            width: width,
           }}
           unoptimized
           draggable={false}
