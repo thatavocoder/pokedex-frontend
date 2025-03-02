@@ -34,7 +34,7 @@ const DailyPokemon = ({ setColor }: DailyPokemonProps) => {
   }
 
   if (!randomPokemon) {
-    return <div className="p-6 bg-white rounded-xl shadow-md">No random pokemon found</div>;
+    return <div></div>;
   }
 
   return (
