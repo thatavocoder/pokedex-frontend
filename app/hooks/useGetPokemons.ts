@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import api from '../lib/axios';
-import { Pokemon, PokemonListResponse } from '../types/pokemon';
+import { PokemonListResponse } from '../types/pokemon';
 
-export const usePokemon = () => {
+export const useGetPokemons = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

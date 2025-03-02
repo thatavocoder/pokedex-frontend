@@ -1,10 +1,20 @@
+'use client';
+
 import Image from 'next/image';
 import HeroBg from './components/ui/hero-bg';
 import PokemonAutocomplete from './components/home/pokemon-autocomplete';
+import DailyPokemon from './components/home/daily-pokemon';
+import { useState } from 'react';
+import { toPastel } from './utils/to-pastel';
 
 export default function Home() {
+  const [color, setColor] = useState<string>('green');
+
   return (
-    <div className="flex flex-col items-center h-screen bg-green-300">
+    <div
+      className="flex flex-col items-center h-screen"
+      style={{ backgroundColor: color ? toPastel(color) : toPastel('green') }}
+    >
       <HeroBg />
       <Image
         src="/logo.png"
@@ -15,6 +25,7 @@ export default function Home() {
         unoptimized
       />
       <PokemonAutocomplete />
+      <DailyPokemon setColor={setColor} />
     </div>
   );
 }

@@ -2,17 +2,15 @@
 
 import { BiSearch } from 'react-icons/bi';
 import { useEffect, useState } from 'react';
-import { usePokemon } from '../../hooks/usePokemon';
-import { Pokemon } from '../../types/pokemon';
+import { useGetPokemons } from '../../hooks/useGetPokemons';
+import { PokemonListItem } from '../../types/pokemon';
 import { useRouter } from 'next/navigation';
 
-type Props = {};
-
-const PokemonAutocomplete = (props: Props) => {
+const PokemonAutocomplete = () => {
   const [search, setSearch] = useState('');
-  const [suggestions, setSuggestions] = useState<Pokemon[]>([]);
+  const [suggestions, setSuggestions] = useState<PokemonListItem[]>([]);
 
-  const { fetchPokemonList, isLoading, error } = usePokemon();
+  const { fetchPokemonList, isLoading, error } = useGetPokemons();
 
   const router = useRouter();
 

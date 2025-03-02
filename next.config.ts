@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
     dirs: ['pages', 'components', 'app', 'utils', 'lib'],
     ignoreDuringBuilds: false,
   },
+  images: {
+    domains: ['raw.githubusercontent.com'],
+  },
 };
 
 export default nextConfig;
