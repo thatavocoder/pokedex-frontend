@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, Dispatch, SetStateAction } from 'react';
-import useGetRandomPokemon from '../../hooks/useGetRandomPokemon';
+import useGetRandomPokemonEvery24Hours from '../../hooks/useGetRandomPokemon';
 import Image from 'next/image';
 
 interface DailyPokemonProps {
@@ -9,7 +9,7 @@ interface DailyPokemonProps {
 }
 
 const DailyPokemon = ({ setColor }: DailyPokemonProps) => {
-  const { fetchRandomPokemon, randomPokemon, isLoading, error } = useGetRandomPokemon();
+  const { fetchRandomPokemon, randomPokemon, isLoading, error } = useGetRandomPokemonEvery24Hours();
   const hasFetchedRef = React.useRef(false);
 
   useEffect(() => {

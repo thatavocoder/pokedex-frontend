@@ -8,7 +8,7 @@ interface CachedPokemon {
   timestamp: number;
 }
 
-export const useGetRandomPokemon = () => {
+export const useGetRandomPokemonEvery24Hours = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [randomPokemon, setRandomPokemon] = useState<Pokemon | null>(null);
@@ -55,4 +55,4 @@ export const useGetRandomPokemon = () => {
   };
 };
 
-export default useGetRandomPokemon;
+export default useGetRandomPokemonEvery24Hours;
