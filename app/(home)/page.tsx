@@ -1,11 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import HeroBg from './components/ui/hero-bg';
-import PokemonAutocomplete from './components/home/pokemon-autocomplete';
-import DailyPokemon from './components/home/daily-pokemon';
+import HeroBg from './components/hero-bg';
+import PokemonAutocomplete from './components/pokemon-autocomplete';
+import DailyPokemon from './components/daily-pokemon';
 import { useState } from 'react';
-import { toPastel } from './utils/to-pastel';
+import { toPastel } from '../utils/to-pastel';
 
 export default function Home() {
   const [color, setColor] = useState<string>('green');

@@ -16,4 +16,9 @@ export interface Pokemon {
   name: string;
   image_url: string;
   color: string;
+  height: number;
+  weight: number;
+  abilities: string[];
+  types: string[];
+  base_experience: number;
 }
