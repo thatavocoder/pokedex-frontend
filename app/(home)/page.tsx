@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <div
-      className="flex flex-col items-center h-screen"
+      className="flex flex-col items-center min-h-screen h-full pb-8"
       style={{ backgroundColor: color ? toPastel(color) : toPastel('green') }}
     >
       <HeroBg />

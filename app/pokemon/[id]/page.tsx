@@ -15,7 +15,7 @@ const PokemonDetails = () => {
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-  if (!pokemon) return <div>Pokemon not found</div>;
+  if (!pokemon) return <div></div>;
 
   return (
     <div className="h-full min-h-screen lg:h-screen w-full bg-gray-200">

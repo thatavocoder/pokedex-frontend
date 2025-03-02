@@ -5,7 +5,7 @@ type Props = {};
 
 const HeroBg = (props: Props) => {
   return (
-    <div className="absolute w-full h-full top-0 left-0 overflow-hidden">
+    <div className="fixed w-full h-full top-0 left-0 overflow-hidden">
       {[
         {
           left: -10,

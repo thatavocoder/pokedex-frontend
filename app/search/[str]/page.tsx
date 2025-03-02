@@ -6,6 +6,8 @@ import { PokemonListItem } from '../../types/pokemon';
 import { useGetPokemons } from '../../hooks/useGetPokemons';
 import { toPastel } from '../../utils/to-pastel';
 import Image from 'next/image';
+import { BackButton } from '../../pokemon/[id]/components/BackButton';
+import { BiArrowBack } from 'react-icons/bi';
 
 const PokemonSearch = () => {
   const { str } = useParams();
@@ -40,6 +42,12 @@ const PokemonSearch = () => {
 
   return (
     <div className="flex flex-col items-center min-h-screen h-full w-full bg-green-300">
+      <button
+        className="absolute top-0 left-0 m-4 text-gray-700 px-4 py-2 rounded-md cursor-pointer"
+        onClick={() => router.back()}
+      >
+        <BiArrowBack className="w-6 h-6" />
+      </button>
       <h1 className="text-4xl font-bold mt-8 mb-6 text-gray-800">Search Results</h1>
       <div className="w-full max-w-4xl px-4">
         {suggestions.length > 0 ? (
