@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -14,4 +14,20 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .clip-path-polygon {
+    clip-path: none;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+  }
+
+  @media (min-width: 768px) {
+    .clip-path-polygon {
+      clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
 }

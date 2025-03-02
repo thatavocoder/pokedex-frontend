@@ -12,7 +12,7 @@ export const PokemonImage = ({ pokemon }: PokemonImageProps) => {
       alt={pokemon.name}
       width={800}
       height={800}
-      className="w-60 h-auto"
+      className="w-24 lg:w-60 h-auto"
       unoptimized
     />
   );

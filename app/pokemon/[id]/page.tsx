@@ -18,15 +18,14 @@ const PokemonDetails = () => {
   if (!pokemon) return <div>Pokemon not found</div>;
 
   return (
-    <div className="relative h-screen w-full bg-gray-200">
-      <div className="absolute top-0 left-0 h-full w-[35%] flex items-center justify-center">
+    <div className="h-full min-h-screen lg:h-screen w-full bg-gray-200">
+      <div className="relative lg:absolute top-0 left-0 h-56 w-full md:h-full md:w-[35%] flex items-center justify-center">
         <BackButton />
         <PokemonImage pokemon={pokemon} />
       </div>
       <div
-        className="absolute top-0 right-0 h-full w-[65%]"
+        className="relative lg:absolute bottom-0 lg:top-0 lg:-bottom-full right-0 h-3/5 w-full md:h-full md:w-[65%] clip-path-polygon"
         style={{
-          clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0% 100%)',
           backgroundColor: toPastel(pokemon.color),
         }}
       >
